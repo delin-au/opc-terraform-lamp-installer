@@ -4,7 +4,7 @@
 [opc provider]: https://github.com/terraform-providers/terraform-provider-opc
 
 # Terraform LAMP Installer for Oracle Classic IaaS
-insert_image
+![readme md_logo_v0 01](https://user-images.githubusercontent.com/36317955/36942349-e8ff6454-1fc3-11e8-9183-3fc856c102f5.png)
 ## About
 
 The LAMP Installer for [Oracle Classic IaaS][oci-c] provides a Terraform-based LAMP installation for the
