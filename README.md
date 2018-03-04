@@ -11,7 +11,7 @@ The LAMP Installer for [Oracle Classic IaaS][oci-c] provides a Terraform-based L
 [Oracle Cloud@Customer (OCC)][occ] & [OCI-Classic (OCI-C)][oci-c] Oracle Cloud Infrastructure platforms.  
 
 This installer utilises the [Terraform Oracle Public Cloud Provider][opc provider].
-It consists of a set of [Terraform][terraform] configurations & shell scripts which are used to provision a Two-Tier LAMP Stack and associated Management Network.
+It consists of a set of [Terraform][terraform] configurations & shell scripts which are used to provision a Two-Tier LAMP Stack, and associated Management Network. The softwre elements of the LAMP stack are based on open source technologies.
 
 ## Solution Overview
 
@@ -20,25 +20,25 @@ Terraform is used to _provision_ the cloud infrastructure and any required local
 #### OCI Infrastructure:
 
  - 3 IP Networks:
-   - IP Network 1 (public): _MANAGEMENT_
+   - **IP Network 1: _MANAGEMENT (public)_**
      - x1 Bastion/NAT Gateway:
        - Allows SSH inbound from public internet to provision & admin the environment.
        - Is configured as NAT Gateway for outbound traffic originating from private networks.
 
-   - IP Network 2 (private): _DATABASE_
+   - **IP Network 2: _DATABASE (private)_**
      - X1 MySQL Server:
        - Database server uses NAT Gateway for outbound internet access (i.e. to install packages from public repositories).
 
-   - IP Network 3 (public): _WEB FRONT-END_
+   - **IP Network 3: _WEB FRONT-END (public)_**
      - X1 Web Server:
-       - Apache, PHP, MyPHPAdmin (connected to database server), Apache Server-Info, Apache server-status.
+       - Apache, PHP, MyPHPAdmin (connected to database server), Apache Server-Info, Apache Server-Status.
 
 Terraform uses `remote-exec` provisioner to handle the instance-level _configuration_ for the instances to provision out the Apache, MySQL, and Internet Gateway functionality.
 
 ## Prerequisites
 
 1. Download and install [Terraform][terraform] (v0.11.3 or later). Follow the link for Hashicorp [instructions](https://www.terraform.io/intro/getting-started/install.html).
-2. [Terraform OPC provider](https://www.terraform.io/docs/providers/opc/index.html#) (can be pulled automatically using terraform init
+2. [Terraform OPC provider](https://www.terraform.io/docs/providers/opc/index.html#) (can be pulled automatically using `terraform init`
 directive once Terraform is configured).
 
 ## Quick start
@@ -105,7 +105,7 @@ $     140.86.0.17
 $ ]
 ````
 
-To access MySQL admin dashboard, or any of the other web interfaces running in the stack, browse to the public IP address of the application host on port 80 followed by any of the paths as described following:
+To access MySQL admin dashboard, or any of the other web interfaces running in the stack, browse to the public IP address of the application host on port 80 - followed by any of the paths as described:
 
   - `/`  
     Provides the default Apache landing page
@@ -119,4 +119,4 @@ To access MySQL admin dashboard, or any of the other web interfaces running in t
 _Keys are provided for simplicity only, for long running deployments it is recommended that you replace the provided keys prior to deployment._
 
 ## Notes
-
+ - Future: Include option to choose either IaaS or PaaS database engine at initialisation phase.
