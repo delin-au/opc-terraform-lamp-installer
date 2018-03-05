@@ -11,7 +11,7 @@ The LAMP Installer for [Oracle Classic IaaS][oci-c] provides a Terraform-based L
 [Oracle Cloud@Customer (OCC)][occ] & [OCI-Classic (OCI-C)][oci-c] Oracle Cloud Infrastructure platforms.  
 
 This installer utilises the [Terraform Oracle Public Cloud Provider][opc provider].
-It consists of a set of [Terraform][terraform] configurations & shell scripts which are used to provision a Two-Tier LAMP Stack, and associated Management Network. The softwre elements of the LAMP stack are based on open source technologies.
+It consists of a set of [Terraform][terraform] configurations & shell scripts which are used to provision a Two-Tier LAMP Stack, and associated Management Network. The software elements of the LAMP stack are based on open source technologies.
 
 ## Solution Overview
 
@@ -116,7 +116,7 @@ To access MySQL admin dashboard, or any of the other web interfaces running in t
   - `/server-info`  
     Apache server configuration report
 
-_Keys are provided for simplicity only, for long running deployments it is recommended that you replace the provided keys prior to deployment._
+_**Keys are provided for simplicity only, for long running deployments it is strongly recommended that you replace the provided keys prior to deployment.**_
 
 ## Notes
  - Future: Include option to choose either IaaS or PaaS database engine at initialisation phase.
